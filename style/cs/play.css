@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "segoeuisl";
+  src: url('./fonts/segoeuisl.ttf');
+}
+@font-face {
+  font-family: "segoeui";
+  src: url('./fonts/segoeui.ttf');
+}
+@font-face {
+  font-family: "segoeuib";
+  src: url('./fonts/segoeuib.ttf');
+}
+@font-face {
+  font-family: "seguibl";
+  src: url('./fonts/seguibl.ttf');
+}
+
+
+body {
+  font-family: "segoeui";
+}
+.portofolio {
+  color: white;
+  background: radial-gradient(rgba(114, 82, 183, 1), rgba(54, 16, 136, 1));
+}
+main{
+  border: 1px solid;
+}
+.page {
+  min-height: 90vh;
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+.remember,
+.share {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero {
+  overflow: hidden;
+  height: 600px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+}
+.hero img {
+  height: 600px;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.hero a {
+  display: flex;
+}
+
+.model-right {
+  transform: translate(0%, 10%);
+}
+.model-left {
+  transform: translate(0%, -10%);
+}
+
+.hero:hover .model-right {
+  transform: translate(0%, 0%);
+}
+.hero:hover .model-left {
+  transform: translate(0%, 0%);
+}
+
+.details {
+  grid-column: 2/3;
+  align-self: end;
+}
+.details h1 {
+  font-size: 36px;
+  font-family: "segoeuib";
+}
+.details p {
+  font-size: 20px;
+  padding: 20px 0px 50px 0px;
+}
+
+.pages {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pages > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pages h3 {
+  padding: 20px;
+}
+
+.pages svg {
+  cursor: pointer;
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.pages svg:hover {
+  animation: dot 0.5s ease-in-out infinite alternate;
+}
+
+.pages svg.active {
+  opacity: 1;
+}
+
+@keyframes dot {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .page {
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+  .hero img {
+    height: 500px;
+  }
+  .details {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+  .details h1 {
+    font-size: 36px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    height: 400px;
+  }
+  .details h1 {
+    font-size: 30px;
+  }
+}
